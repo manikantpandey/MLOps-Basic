@@ -5,7 +5,6 @@ import pandas as pd
 
 # get absolute path of csv files from data folder
 def get_absPath(filename):
-    """Returns the path of the notebooks folder"""
     path = os.path.abspath(
         os.path.join(
             os.path.dirname(__file__), os.path.pardir, os.path.pardir, "data", filename
@@ -54,7 +53,6 @@ shift_tolerance = 3
 
 def test_check_schema():
     datafile = get_absPath("diabetes.csv")
-    # check that file exists
     assert os.path.exists(datafile)
     dataset = pd.read_csv(datafile)
     header = dataset[dataset.columns[:-1]]
